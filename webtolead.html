@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Get in Touch</title>
+    <style>
+        :root {
+            --primary-color: #00a1e0;
+            --secondary-color: #032d42;
+            --accent-color: #ff6b35;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #28a745;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .form-header h1 {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-header p {
+            color: #6c757d;
+            font-size: 1.1rem;
+        }
+        
+        .lead-form {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -1rem 1.5rem;
+        }
+        
+        .form-group {
+            flex: 1 0 calc(50% - 2rem);
+            margin: 0 1rem 1.5rem;
+            min-width: 250px;
+        }
+        
+        .form-group.full-width {
+            flex: 1 0 calc(100% - 2rem);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="submit"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 161, 224, 0.2);
+        }
+        
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 2rem auto 0;
+            width: auto;
+        }
+        
+        .submit-btn:hover {
+            background-color: #0088c6;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-footer {
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .form-group {
+                flex: 1 0 calc(100% - 2rem);
+            }
+            
+            .form-header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .lead-form {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        /* Success message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(40, 167, 69, 0.1);
+            border-radius: 5px;
+            margin-top: 2rem;
+            border-left: 4px solid var(--success-color);
+        }
+        
+        .success-message h2 {
+            color: var(--success-color);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-header">
+            <h1>Get In Touch</h1>
+            <p>Fill out the form below and our team will contact you shortly</p>
+        </div>
+        
+        <form class="lead-form" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgL000003OVox" method="POST">
+            <input type="hidden" name="oid" value="00DgL000003OVox">
+            <input type="hidden" name="retURL" value="https://www.google.com/">
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first_name">First Name*</label>
+                    <input id="first_name" maxlength="40" name="first_name" type="text" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="last_name">Last Name*</label>
+                    <input id="last_name" maxlength="80" name="last_name" type="text" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input id="email" maxlength="80" name="email" type="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input id="phone" maxlength="40" name="phone" type="tel">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="company">Company*</label>
+                    <input id="company" maxlength="40" name="company" type="text" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input id="city" maxlength="40" name="city" type="text">
+                </div>
+            </div>
+            
+            <input type="submit" name="submit" class="submit-btn" value="Submit">
+        </form>
+        
+        <div class="form-footer">
+            <p>We respect your privacy. Your information will not be shared with third parties.</p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add form submission handling
+        document.querySelector('.lead-form').addEventListener('submit', function(e) {
+            // You could add form validation here
+            // e.preventDefault(); // Uncomment to prevent default submission for AJAX handling
+            
+            // For demo purposes, show success message
+            // In a real implementation, you'd want to handle the Salesforce response
+            setTimeout(function() {
+                const successMsg = document.createElement('div');
+                successMsg.className = 'success-message';
+                successMsg.innerHTML = `
+                    <h2>Thank You!</h2>
+                    <p>Your information has been submitted successfully. We'll be in touch soon.</p>
+                `;
+                document.querySelector('.lead-form').style.display = 'none';
+                document.querySelector('.form-footer').before(successMsg);
+                successMsg.style.display = 'block';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
